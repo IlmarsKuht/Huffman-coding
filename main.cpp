@@ -152,7 +152,7 @@ void writeEncodedStringToBinaryFile(const std::string& encodedString, const std:
         int bytesToWrite = (bufferBits + 7) / 8;
 
         for (int i = 3; i >= 3 - bytesToWrite + 1; --i) {
-            char byte = (buffer >> (i * 8)) & 0xFF; // Extract each byte
+            char byte = (buffer >> (i * 8)) & 0xFF;
             output.write(&byte, 1);
         }
     }
@@ -245,21 +245,18 @@ int main()
         return 1;
     }
 
-     // Start timing buildHuffmanTree
     auto start = std::chrono::high_resolution_clock::now();
     buildHuffmanTree(text);
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
     std::cout << "Time taken by buildHuffmanTree: " << duration.count() << " milliseconds" << std::endl;
 
-    // Start timing buildTreeFromSerialization
     start = std::chrono::high_resolution_clock::now();
     Node* root = buildTreeFromSerialization("huffman_tree.txt");
     stop = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
     std::cout << "Time taken by buildTreeFromSerialization: " << duration.count() << " milliseconds" << std::endl;
 
-    // Start timing decodeFromFile
     start = std::chrono::high_resolution_clock::now();
     decodeFromFile(root, "encoded.bin", "decoded.txt");
     stop = std::chrono::high_resolution_clock::now();
