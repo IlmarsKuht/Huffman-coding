@@ -1,7 +1,7 @@
 # Huffman Encoding Project
 
 ## Introduction
-This Huffman Encoding project implements a widely used method for lossless data compression. The key feature of this project is its ability to encode a text file and produce both a compressed version and a "key" for decoding, represented by the Huffman Tree. The size of the Huffman Tree, or the "key", is typically around 2KB for larger files. The space savings from this encoding method can be substantial, often achieving up to 80% reduction in file size, especially for texts with a limited set of unique characters. For texts that have a higher number of unique characters, the space savings are generally around 50%.
+This Huffman Encoding project implements a widely used method for lossless data compression. The key feature of this project is its ability to encode a text file and produce both a compressed version and a "key" for decoding, represented by the Huffman Tree. The size of the Huffman Tree, or the "key", is typically around 2KB for larger files. The space savings from this encoding method can be substantial, often achieving up to 90% reduction in file size, especially for texts with a limited set of unique characters. For texts that have a higher number of unique characters, the space savings are generally around 50%.
 
 ## Features
 - **File Encoding**: Efficiently encodes text files using the Huffman coding technique.
